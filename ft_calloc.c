@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 09:12:20 by apinto            #+#    #+#             */
-/*   Updated: 2021/02/23 14:03:27 by apinto           ###   ########.fr       */
+/*   Updated: 2021/04/05 16:00:46 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	*ft_calloc(size_t count, size_t size)
 	ptr = malloc(amount);
 	if (ptr)
 	{
-		ft_bzero(ptr, size);
+		ft_bzero(ptr, count * size);
 		return (ptr);
 	}
 	else
