@@ -37,6 +37,9 @@ SRCS	=	ft_memset.c			\
 			ft_min.c			\
 			ft_strrev.c			\
 			ft_atof.c			\
+			ft_reallocates_memory.c	\
+
+GNL		= get_next_line.c
 
 OBJS	= ${SRCS:.c=.o}
 
@@ -51,13 +54,18 @@ CFLAGS	= -Wall -Wextra -Werror
 .c.o:
 			${CC} ${CFLAGS} -c $< -o ${<:.c=.o} -I.
 
-$(NAME):	libft.h ${OBJS} 
-			${ARRC} ${NAME} ${OBJS}
+$(NAME):	${OBJS} gnl
+			${ARRC} ${NAME} ${OBJS} get_next_line.o
+
+gnl:		${OBJS}
+			${CC} ${CFLAGS} -D BUFFER_SIZE=1000 -I. -c get_next_line.c -o get_next_line.o
 
 all:		${NAME}
 
+
 clean:
 			${RM} ${OBJS} ${BONUS_OBJS}
+			rm get_next_line.o
 
 fclean:		clean
 			${RM} ${NAME}

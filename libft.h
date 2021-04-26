@@ -21,6 +21,13 @@ typedef struct s_list {
 	struct s_list	*next;
 }				t_list;
 
+typedef	struct		fildes_storage {
+	char			**content;
+	char			*buffer;
+	int				i;
+	int				eof;
+}					storage;
+
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t count, size_t size);
@@ -69,4 +76,6 @@ size_t	ft_strlen(const char *s);
 char	**ft_split(char const *s, char c);
 int		ft_min(int args, ...);
 int		ft_max(int args, ...);
+void	*ft_reallocates_memory(void *old, size_t count, size_t size, int offset);
+int		get_next_line(int fd, char **line);
 #endif
