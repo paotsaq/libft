@@ -36,6 +36,7 @@ SRCS	=	ft_memset.c			\
 			ft_max.c			\
 			ft_min.c			\
 			ft_strrev.c			\
+			ft_atof.c			\
 
 OBJS	= ${SRCS:.c=.o}
 
