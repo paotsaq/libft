@@ -6,13 +6,13 @@
 /*   By: apinto <apinto@student.42lisboa.c>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 15:21:27 by apinto            #+#    #+#             */
-/*   Updated: 2021/04/25 08:06:21 by apinto           ###   ########.fr       */
+/*   Updated: 2021/04/26 15:33:27 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	void    advance_buffer_index(char **buffer, int index)
+static	void	advance_buffer_index(char **buffer, int index)
 {
 	if (*(buffer) + index)
 		*buffer = *(buffer) + index;
@@ -20,7 +20,7 @@ static	void    advance_buffer_index(char **buffer, int index)
 		*buffer = 0;
 }
 
-static	int		handles_memory(storage *result, int initialise)
+static	int	handles_memory(storage *result, int initialise)
 {
 	if (initialise)
 	{
@@ -59,15 +59,16 @@ static	void	handle_copies(char *s, int size, storage *result, int finish)
 		old_string = result->content[result->i];
 		size = ft_strlen(old_string) + size;
 		result->content[result->i] = ft_reallocates_memory(old_string,
-			size, sizeof(char), 0);
+				size, sizeof(char), 0);
 	}
 	ft_strlcat(result->content[result->i], s, size);
 	if (finish)
 		result->content = ft_reallocates_memory(result->content,
-			(++result->i) + 1, sizeof(char *), 0);
+				(++result->i) + 1, sizeof(char *), 0);
 }
 
-static	int		retrieve_split_lines(int fd, char *buffer, storage *result, int buf_size)
+static	int	retrieve_split_lines(int fd, char *buffer, storage *result,
+					int buf_size)
 {
 	int			read_value;
 	int			i;
@@ -97,7 +98,7 @@ static	int		retrieve_split_lines(int fd, char *buffer, storage *result, int buf_
 	return (0);
 }
 
-int		get_next_line(int fd, char **line)
+int	get_next_line(int fd, char **line)
 {
 	static storage	result;
 
@@ -114,7 +115,8 @@ int		get_next_line(int fd, char **line)
 		*line = result.content[0];
 	else
 		*line = ft_calloc(1, sizeof(char));
-	result.content = ft_reallocates_memory(result.content, (result.i)-- + 1, sizeof(char *), 1);
+	result.content = ft_reallocates_memory(result.content,
+			(result.i)-- + 1, sizeof(char *), 1);
 	if (result.eof && result.i == -1)
 		return (handles_memory(&result, 0));
 	else

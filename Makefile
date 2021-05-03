@@ -38,9 +38,17 @@ SRCS	=	ft_memset.c			\
 			ft_strrev.c			\
 			ft_atof.c			\
 			ft_reallocates_memory.c	\
+			ft_lstadd_back.c \
+			ft_lstadd_front.c \
+			ft_lstclear.c \
+			ft_lstdelone.c \
+			ft_lstiter.c \
+			ft_lstlast.c \
+			ft_lstmap.c \
+			ft_lstnew.c \
+			ft_lstsize.c \
 
 GNL		= get_next_line.c
-
 OBJS	= ${SRCS:.c=.o}
 
 NAME	= libft.a
