@@ -49,6 +49,7 @@ SRCS	=	ft_memset.c			\
 			ft_lstmap.c \
 			ft_lstnew.c \
 			ft_lstsize.c \
+			ft_lstclone.c \
 
 GNL		= get_next_line.c
 OBJS	= ${SRCS:.c=.o}
