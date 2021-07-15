@@ -6,20 +6,22 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 09:23:21 by apinto            #+#    #+#             */
-/*   Updated: 2021/06/07 10:16:23 by apinto           ###   ########.fr       */
+/*   Updated: 2021/07/15 09:13:39 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_content_is_int(char	*content)
+int	ft_content_is_int(char *src)
 {
-	if (*content == '-')
-		content++;
-	if (!*content)
-		return (0);
-	while (*content)
-		if (!(ft_isdigit(*content++)))
-			return (0);
-	return (1);
+	int		size;
+	int		value;
+	char	*number_in_string;
+
+	size = ft_strlen(src);
+	number_in_string = ft_itoa(ft_atoi(src));
+	value = (!(size != ft_strlen(number_in_string)
+		|| ft_strncmp(src, number_in_string, size)));
+	free(number_in_string);
+	return (value);
 }
