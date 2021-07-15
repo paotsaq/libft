@@ -87,4 +87,5 @@ int		ft_min(int args, ...);
 int		ft_max(int args, ...);
 void	*ft_reallocates_memory(void *old, size_t count, size_t size, int offset);
 int		get_next_line(int fd, char **line);
+int		ft_abs(int x);
 #endif
