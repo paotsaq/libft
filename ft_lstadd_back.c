@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 08:58:56 by apinto            #+#    #+#             */
-/*   Updated: 2021/02/20 08:59:00 by apinto           ###   ########.fr       */
+/*   Updated: 2021/07/15 08:48:24 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list *last;
+	t_list	*last;
 
 	if (lst && new)
 	{

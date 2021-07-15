@@ -6,19 +6,19 @@
 /*   By: apinto <apinto@student.42lisboa.c>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/26 10:51:08 by apinto            #+#    #+#             */
-/*   Updated: 2021/04/26 17:16:34 by apinto           ###   ########.fr       */
+/*   Updated: 2021/07/15 08:38:34 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int		ft_isspace(int chr)
+static int	ft_isspace(int chr)
 {
 	return (chr == 9 || chr == 10 || chr == 11
 		|| chr == 12 || chr == 13 || chr == 0 || chr == ' ');
 }
 
-static	int		ft_issign(char chr)
+static int	ft_issign(char chr)
 {
 	return (chr == '-' || chr == '+');
 }
@@ -31,11 +31,11 @@ static	double	ft_power(double n, int i)
 		return (n * ft_power(n, i - 1));
 }
 
-double			ft_atof(const char *str)
+double	ft_atof(const char *str)
 {
 	int		sign;
 	double	res;
-	int 	power;
+	int		power;
 
 	sign = 1;
 	while (ft_isspace(*str))

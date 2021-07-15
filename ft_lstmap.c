@@ -6,7 +6,7 @@
 /*   By: apinto <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/13 11:45:35 by apinto            #+#    #+#             */
-/*   Updated: 2021/02/23 06:20:03 by apinto           ###   ########.fr       */
+/*   Updated: 2021/07/15 08:47:57 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list *new_node;
-	t_list *begg;
+	t_list	*new_node;
+	t_list	*begg;
 
 	if (!f || !del)
 		return (0);

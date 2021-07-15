@@ -6,7 +6,7 @@
 /*   By: apinto <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/10 08:25:25 by apinto            #+#    #+#             */
-/*   Updated: 2021/06/11 06:15:46 by apinto           ###   ########.fr       */
+/*   Updated: 2021/07/15 08:48:06 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 t_list	*ft_lstclone(t_list *list_to_clone)
 {
-	t_list *new_list;
-	t_list *begg_new_list;
+	t_list	*new_list;
+	t_list	*begg_new_list;
 
 	begg_new_list = NULL;
 	if (list_to_clone)

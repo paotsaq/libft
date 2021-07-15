@@ -6,7 +6,7 @@
 /*   By: apinto <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 16:36:43 by apinto            #+#    #+#             */
-/*   Updated: 2021/02/13 09:22:39 by apinto           ###   ########.fr       */
+/*   Updated: 2021/07/15 08:47:48 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list *res;
+	t_list	*res;
 
 	res = malloc(sizeof(t_list));
 	if (res == 0)
