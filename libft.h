@@ -10,6 +10,7 @@
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# define MAX_SIZE 4096
 # include <limits.h>
 # include <stdarg.h>
 # include <stdlib.h>
