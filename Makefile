@@ -39,6 +39,7 @@ SRCS	=	ft_memset.c			\
 			ft_strrev.c			\
 			ft_atof.c			\
 			ft_abs.c			\
+			ft_check_for_positive_integer.c			\
 			ft_content_is_int.c	\
 			ft_reallocates_memory.c	\
 			ft_lstadd_back.c \
