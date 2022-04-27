@@ -6,11 +6,12 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 09:52:39 by apinto            #+#    #+#             */
-/*   Updated: 2021/07/30 09:32:55 by apinto           ###   ########.fr       */
+/*   Updated: 2022/04/27 11:12:02 by apintobocal2     ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 int	get_next_line(int fd, char **line)
 {
 	char	buf;
