@@ -1,3 +1,8 @@
+NAME	= libft.a
+
+CC		= gcc
+CFLAGS	= -g -Wall -Wextra -Werror
+
 SRCS	=	ft_memset.c			\
 			ft_bzero.c			\
 			ft_memcpy.c			\
@@ -53,32 +58,29 @@ SRCS	=	ft_memset.c			\
 			ft_lstsize.c \
 			ft_lstclone.c \
 
-GNL		= get_next_line.c
-OBJS	= ${SRCS:.c=.o}
+HDRS = libft.h
+OBJS = $(SRCS:%.c=$(OBJDIR)/%.o)
+SRCDIR = ./src
+OBJDIR = ./obj
 
-NAME	= libft.a
 
-CC		= gcc
 ARRC	= ar rcs
 RM		= rm -f
 
-CFLAGS	= -g -Wall -Wextra -Werror
-
-.c.o:
-			${CC} ${CFLAGS} -c $< -o ${<:.c=.o} -I.
-
-$(NAME):	${OBJS} gnl
-			${ARRC} ${NAME} ${OBJS} get_next_line.o
-
-gnl:		${OBJS}
-			${CC} ${CFLAGS} -D BUFFER_SIZE=1000 -I. -c get_next_line.c -o get_next_line.o
 
 all:		${NAME}
 
+$(NAME):	${OBJS} $(OBJDIR)/get_next_line.o
+			${ARRC} ${NAME} ${OBJS}
+
+$(OBJDIR)/get_next_line.o: $(SRCDIR)/get_next_line.c	
+			${CC} ${CFLAGS} -D BUFFER_SIZE=1000 -I. -o $(OBJDIR)/get_next_line.o -c $(SRCDIR)/get_next_line.c 
+
+$(OBJDIR)/%.o: $(SRCDIR)/%.c
+	$(CC) $(CFLAGS) -I. -o $@ -c $<
 
 clean:
-			${RM} ${OBJS} ${BONUS_OBJS}
-			rm get_next_line.o
+			${RM} ${OBJS} $(OBJDIR)/get_next_line.o ${BONUS_OBJS}
 
 fclean:		clean
 			${RM} ${NAME}
@@ -87,3 +89,5 @@ re:			fclean all
 
 bonus:	${OBJS} ${BONUS_OBJS}
 			${ARRC} ${NAME} ${OBJS} ${BONUS_OBJS}
+
+.PHONY: all gnl
